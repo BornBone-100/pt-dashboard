@@ -7,7 +7,7 @@ type MainNavProps = {
 export function MainNav({ items }: MainNavProps) {
   return (
     <nav className="mb-16 flex items-center justify-between">
-      <div className="text-2xl font-semibold tracking-tight text-white">PT Pulse</div>
+      <div className="text-2xl font-semibold tracking-tight text-white">Re:PhyT</div>
       <div className="hidden items-center gap-6 text-xs font-medium text-slate-200 md:flex">
         {items.map((item) => (
           <a key={item.href} href={item.href} className="hover:text-white">
