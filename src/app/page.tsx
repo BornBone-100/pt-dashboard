@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Building2, CheckCircle2, ShieldCheck, Sparkles } from "lucide-react";
+import { ArrowRight, Building2, Check, CheckCircle2 } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -9,6 +9,13 @@ const features = [
   "기존 AI SOAP 앱과 양방향 연동",
   "실시간 데이터 동기화 및 환자 경과 반영",
   "치료사 업무 흐름 중심의 인사이트 대시보드",
+];
+
+const trustBadges = [
+  "임상 프로토콜 검증",
+  "B2B 보안 표준 대응",
+  "SOAP 데이터 무결성",
+  "Enterprise Ready",
 ];
 
 export default function Home() {
@@ -30,41 +37,53 @@ export default function Home() {
         </header>
 
         <section className="py-24 text-center">
-          <div className="mx-auto max-w-4xl space-y-7">
+          <div className="mx-auto max-w-5xl space-y-7">
             <Badge className="bg-cyan-400/15 text-cyan-200 hover:bg-cyan-400/15">B2B SaaS Physical Care Platform</Badge>
-            <h1 className="text-4xl font-extrabold leading-[1.08] tracking-tight text-white lg:text-6xl">
+            <h1 className="text-5xl font-extrabold leading-[1.08] tracking-tight text-white lg:text-7xl">
               데이터는 정직하며, 전문 물리치료사가 함께 케어를 정밀하게 실행합니다.
             </h1>
             <p className="mx-auto max-w-2xl text-base font-normal leading-7 tracking-tight text-zinc-400 lg:text-lg">
               기존 AI SOAP 앱 데이터를 기반으로 클리닉의 운영 효율과 치료 품질을 동시에 향상하는 프리미엄 B2B 대시보드입니다.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
-              <Button className="h-10 bg-cyan-300 px-6 font-semibold text-black shadow-[0_12px_40px_-15px_rgba(34,211,238,0.9)] hover:bg-cyan-200">
+              <Button className="h-11 bg-blue-600 px-7 font-semibold text-white shadow-[0_12px_40px_-15px_rgba(37,99,235,0.9)] hover:bg-blue-700">
                 무료 데모 신청하기
               </Button>
-              <Button variant="outline" className="border-white/15 bg-white/5 text-white hover:bg-white/10">
+              <Button variant="outline" className="h-11 border-zinc-600 bg-transparent px-7 text-white hover:bg-zinc-800">
                 도입 문의
               </Button>
             </div>
-          </div>
-        </section>
-
-        <section className="py-20">
-          <div className="w-full rounded-2xl border border-white/10 bg-white/5 px-6 py-6 backdrop-blur">
-            <div className="mb-4 flex items-center gap-2">
-              <ShieldCheck className="size-5 text-emerald-300" />
-              <p className="text-lg font-bold tracking-tight text-white">Trust & Authority</p>
-            </div>
-            <div className="grid gap-4 md:grid-cols-2">
-              <div className="rounded-xl border border-white/10 bg-black/20 p-4 text-sm font-normal leading-6 tracking-tight text-zinc-300">
-                7년 차 임상 전문가의 실제 치료 프로토콜을 기준으로 지표 구조와 업무 흐름이 설계되었습니다.
+            <div className="mt-14 w-full rounded-2xl border border-zinc-800 bg-zinc-900/90 px-6 py-8 sm:px-10">
+              <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
+                <div className="flex items-center gap-3">
+                  <Check className="size-5 text-blue-500" />
+                  <span className="text-sm font-medium tracking-tight text-zinc-200 md:text-base">
+                    7년 차 임상 전문가 설계
+                  </span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Check className="size-5 text-blue-500" />
+                  <span className="text-sm font-medium tracking-tight text-zinc-200 md:text-base">
+                    치료 프로토콜 최적화
+                  </span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Check className="size-5 text-blue-500" />
+                  <span className="text-sm font-medium tracking-tight text-zinc-200 md:text-base">
+                    AI SOAP 연동
+                  </span>
+                </div>
               </div>
-              <div className="rounded-xl border border-white/10 bg-black/20 p-4 text-sm font-normal leading-6 tracking-tight text-zinc-300">
-                <span className="inline-flex items-center gap-1">
-                  <Sparkles className="size-4 text-cyan-300" />
-                  AI SOAP 연동
-                </span>
-                을 통해 기록 누락을 줄이고, 환자 경과를 일관된 기준으로 추적합니다.
+              <div className="my-6 h-px w-full bg-zinc-800" />
+              <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3">
+                {trustBadges.map((badge) => (
+                  <div
+                    key={badge}
+                    className="rounded-full border border-zinc-700 bg-zinc-800/60 px-3 py-1.5 text-xs font-medium tracking-tight text-zinc-300"
+                  >
+                    {badge}
+                  </div>
+                ))}
               </div>
             </div>
           </div>
