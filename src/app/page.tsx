@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Building2, Check, CheckCircle2, MessageCircle } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -11,74 +11,89 @@ const features = [
   "치료사 업무 흐름 중심의 인사이트 대시보드",
 ];
 
-const kakaoConsultUrl =
-  process.env.NEXT_PUBLIC_KAKAO_CHANNEL_URL ?? "https://pf.kakao.com/";
-
 export default function Home() {
   return (
     <main className="min-h-screen break-keep bg-white font-sans tracking-tight text-slate-900">
       <div className="mx-auto w-full max-w-6xl px-4 py-8 lg:px-6">
-        <header className="mb-10 flex items-center justify-between rounded-2xl border border-gray-200 bg-white px-5 py-3">
-          <div className="flex items-center gap-3">
-            <div className="flex size-9 items-center justify-center rounded-xl bg-slate-900 text-white">
-              <Building2 className="size-4" />
-            </div>
-            <p className="font-semibold tracking-tight text-slate-900">PT Pulse B2B</p>
+        <section className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-950 text-white">
+          <div className="bg-slate-800/80 px-4 py-2 text-center text-xs text-slate-200">
+            AI SOAP 데이터 연동으로 기록 품질과 환자 회복률을 동시에 높이세요.
           </div>
-          <Link href="/dashboard">
-            <Button variant="outline" className="border-gray-300 bg-white text-slate-900 hover:bg-gray-100">
-              대시보드 미리보기
-            </Button>
-          </Link>
-        </header>
 
-        <section className="px-2 pt-20 pb-20 text-center">
-          <div className="relative mx-auto max-w-5xl overflow-hidden rounded-[2rem] border border-slate-800/70 bg-slate-950 px-6 py-16 shadow-[0_30px_90px_-40px_rgba(15,23,42,0.9)] sm:px-10">
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(59,130,246,0.35),transparent_38%),radial-gradient(circle_at_80%_70%,rgba(99,102,241,0.4),transparent_35%),linear-gradient(180deg,rgba(15,23,42,0.5),rgba(2,6,23,0.92))]" />
-            <div className="pointer-events-none absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-white/10 to-transparent" />
-
-            <div className="relative mx-auto max-w-5xl">
-              <Badge className="mb-8 rounded-full border border-white/20 bg-white/10 px-5 py-2 text-sm font-medium text-slate-100 shadow-sm hover:bg-white/15">
-              B2B SaaS Physical Care Platform
-              </Badge>
-              <h1 className="mx-auto mb-6 max-w-4xl break-keep text-4xl font-extrabold leading-[1.2] tracking-tight text-white md:text-6xl">
-              데이터는 정직하며,
-              <br className="hidden md:block" /> 전문 물리치료사가 함께 케어를 정밀하게 실행합니다.
-              </h1>
-              <p className="mx-auto mb-12 max-w-2xl break-keep text-lg font-normal leading-relaxed tracking-tight text-slate-300 md:text-xl">
-              기존 AI SOAP 웹 데이터를 기반으로 클리닉의 운영 효율과
-              <br className="hidden md:block" /> 치료 품질을 동시에 향상시키는 프리미엄 B2B 대시보드입니다.
-              </p>
-              <div className="mb-16 flex w-full flex-col gap-4 sm:w-auto sm:flex-row sm:justify-center">
-                <Button className="h-12 bg-blue-600 px-8 font-semibold text-white shadow-md hover:bg-blue-700">
-                어플 신청하기
-                </Button>
-                <a href={kakaoConsultUrl} target="_blank" rel="noopener noreferrer">
-                  <Button className="h-12 bg-[#FEE500] px-8 font-semibold text-black shadow-md hover:bg-[#FDD800]">
-                    <MessageCircle className="size-4" />
-                    카카오톡 상담
+          <div className="relative px-6 pb-14 pt-8 sm:px-10">
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(56,189,248,0.18),transparent_40%),radial-gradient(circle_at_75%_70%,rgba(30,64,175,0.28),transparent_42%),linear-gradient(180deg,rgba(15,23,42,0.5),rgba(2,6,23,0.86))]" />
+            <div className="relative">
+              <nav className="mb-16 flex items-center justify-between">
+                <div className="text-2xl font-semibold tracking-tight">PT Pulse</div>
+                <div className="hidden items-center gap-6 text-xs font-medium text-slate-200 md:flex">
+                  <button className="hover:text-white">HOME</button>
+                  <button className="hover:text-white">BENEFITS</button>
+                  <button className="hover:text-white">HOW IT WORKS</button>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Button
+                    variant="outline"
+                    className="h-8 border-slate-600 bg-transparent px-4 text-xs text-slate-200 hover:bg-slate-800"
+                  >
+                    SIGN IN
                   </Button>
-                </a>
-              </div>
-              <div className="w-full rounded-2xl border border-white/15 bg-white/10 px-6 py-8 backdrop-blur-sm sm:px-10">
-                <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
-                  <div className="flex items-center gap-3">
-                    <Check className="size-6 text-blue-300" />
-                    <span className="text-sm font-medium tracking-tight text-slate-100 md:text-base">
-                    7년 차 임상 전문가 설계
+                  <Button className="h-8 bg-blue-600 px-4 text-xs font-semibold text-white hover:bg-blue-700">
+                    REGISTER
+                  </Button>
+                </div>
+              </nav>
+
+              <div className="grid items-center gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+                <div className="text-left">
+                  <Badge className="mb-6 border border-white/20 bg-white/10 text-slate-100 hover:bg-white/15">
+                    B2B SaaS Physical Care Platform
+                  </Badge>
+                  <h1 className="mb-5 max-w-xl text-4xl font-extrabold leading-[1.15] tracking-tight md:text-5xl">
+                    데이터로 환자 회복을 가속하고
+                    <br />
+                    클리닉 운영 성과를 높이세요.
+                  </h1>
+                  <p className="mb-8 max-w-xl text-base leading-relaxed text-slate-300">
+                    기존 AI SOAP 데이터를 실시간으로 통합해 환자 경과, 문서 품질, 치료사 생산성을 한 화면에서 관리합니다.
+                  </p>
+                  <div className="flex flex-wrap gap-3">
+                    <Button className="h-11 bg-emerald-500 px-7 font-semibold text-slate-950 hover:bg-emerald-400">
+                      무료 데모 신청하기
+                    </Button>
+                    <Button
+                      variant="outline"
+                      className="h-11 border-slate-500 bg-slate-900/50 px-7 font-semibold text-white hover:bg-slate-800"
+                    >
+                      도입 문의
+                    </Button>
+                  </div>
+                </div>
+
+                <div className="mx-auto w-full max-w-sm rounded-2xl border border-white/15 bg-white/95 p-5 text-slate-900 shadow-2xl">
+                  <div className="mb-4 flex items-center justify-between">
+                    <div>
+                      <p className="text-sm font-semibold">클리닉 신뢰 지수</p>
+                      <p className="text-xs text-slate-500">실시간 평판 분석</p>
+                    </div>
+                    <span className="rounded-full bg-emerald-100 px-2 py-1 text-xs font-semibold text-emerald-700">
+                      99.2%
                     </span>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <Check className="size-6 text-blue-300" />
-                    <span className="text-sm font-medium tracking-tight text-slate-100 md:text-base">
-                    치료 프로토콜 최적화
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Check className="size-6 text-blue-300" />
-                    <span className="text-sm font-medium tracking-tight text-slate-100 md:text-base">
-                    AI SOAP 연동
-                    </span>
+                  <div className="mb-3 text-3xl font-bold">4.9</div>
+                  <div className="mb-4 text-emerald-500">★★★★★</div>
+                  <div className="space-y-2 text-xs text-slate-600">
+                    <div className="flex items-center justify-between">
+                      <span>재방문 유지율</span>
+                      <span className="font-semibold text-slate-800">87%</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span>P-note 작성률</span>
+                      <span className="font-semibold text-slate-800">91%</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span>문서화 시간 단축</span>
+                      <span className="font-semibold text-slate-800">-32%</span>
+                    </div>
                   </div>
                 </div>
               </div>
