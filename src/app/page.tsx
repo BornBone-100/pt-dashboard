@@ -6,7 +6,6 @@ import { HeroInsightCard } from "@/components/marketing/hero-insight-card";
 import { MainNav } from "@/components/marketing/main-nav";
 import { TopNoticeBar } from "@/components/marketing/top-notice-bar";
 import { TrustBand } from "@/components/marketing/trust-band";
-import { appTheme } from "@/lib/design-system";
 
 const kakaoConsultUrl =
   process.env.NEXT_PUBLIC_KAKAO_CHANNEL_URL ?? "https://pf.kakao.com/";
@@ -19,11 +18,18 @@ const navItems = [
 
 export default function Home() {
   return (
-    <main
-      className={`min-h-screen ${appTheme.font} ${appTheme.colors.pageBg} ${appTheme.colors.heading}`}
-    >
+    <main className="min-h-screen break-keep bg-slate-950 font-sans tracking-tight text-slate-100">
+      <div className="relative">
+        <div
+          className="pointer-events-none fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(3, 7, 18, 0.78), rgba(2, 6, 23, 0.92)), url('https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=2000&q=80')",
+          }}
+        />
+      </div>
       <div className="mx-auto w-full max-w-6xl px-4 py-8 lg:px-6">
-        <section className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-950 text-white">
+        <section className="overflow-hidden rounded-2xl border border-white/20 bg-slate-950/45 text-white backdrop-blur-sm">
           <TopNoticeBar />
           <div className="relative px-6 pb-14 pt-8 sm:px-10">
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(56,189,248,0.18),transparent_40%),radial-gradient(circle_at_75%_70%,rgba(30,64,175,0.28),transparent_42%),linear-gradient(180deg,rgba(15,23,42,0.5),rgba(2,6,23,0.86))]" />
@@ -51,7 +57,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="benefits" className="py-20">
+        <section id="benefits" className="py-20 text-white">
           <h2 className="mb-6 text-3xl font-bold">Benefits</h2>
           <div className="grid gap-4 md:grid-cols-3">
             {[
@@ -59,14 +65,17 @@ export default function Home() {
               "P-note 우선 워크플로우",
               "치료사별 업무 생산성 분석",
             ].map((item) => (
-              <article key={item} className="rounded-xl border border-slate-200 bg-white p-5">
+              <article
+                key={item}
+                className="rounded-xl border border-white/15 bg-slate-900/55 p-5 backdrop-blur-sm"
+              >
                 <p className="font-medium">{item}</p>
               </article>
             ))}
           </div>
         </section>
 
-        <section id="how-it-works" className="py-20">
+        <section id="how-it-works" className="py-20 text-white">
           <h2 className="mb-6 text-3xl font-bold">How It Works</h2>
           <ol className="grid gap-4 md:grid-cols-3">
             {[
@@ -74,21 +83,27 @@ export default function Home() {
               "AI 요약과 위험 신호 자동 분류",
               "대시보드에서 즉시 액션 실행",
             ].map((item, idx) => (
-              <li key={item} className="rounded-xl border border-slate-200 bg-white p-5">
-                <p className="mb-2 text-xs text-slate-500">STEP {idx + 1}</p>
+              <li
+                key={item}
+                className="rounded-xl border border-white/15 bg-slate-900/55 p-5 backdrop-blur-sm"
+              >
+                <p className="mb-2 text-xs text-slate-300">STEP {idx + 1}</p>
                 <p className="font-medium">{item}</p>
               </li>
             ))}
           </ol>
         </section>
 
-        <section id="contact" className="rounded-xl border border-slate-200 bg-white p-6">
+        <section
+          id="contact"
+          className="rounded-xl border border-white/15 bg-slate-900/55 p-6 text-white backdrop-blur-sm"
+        >
           <h2 className="text-2xl font-bold">Contact</h2>
-          <p className="mt-2 text-slate-600">데모 신청과 도입 상담을 통해 클리닉 맞춤 설정을 시작하세요.</p>
+          <p className="mt-2 text-slate-300">데모 신청과 도입 상담을 통해 클리닉 맞춤 설정을 시작하세요.</p>
           <div className="mt-4">
             <Link
               href="/dashboard"
-              className="inline-flex items-center gap-1 rounded-md bg-slate-900 px-4 py-2 text-white hover:bg-slate-800"
+              className="inline-flex items-center gap-1 rounded-md bg-blue-600 px-4 py-2 text-white hover:bg-blue-700"
             >
               대시보드 미리보기
               <ArrowRight className="size-4" />
