@@ -80,25 +80,60 @@ export default function Home() {
         </section>
 
         <section id="pricing" className="scroll-mt-28 py-24 text-white">
-          <h2 className="mb-8 text-3xl font-bold tracking-tight">요금 안내</h2>
+          <h2 className="mb-8 text-3xl font-bold tracking-tight">
+            업무는 가볍게, 진료는 깊이 있게.
+          </h2>
           <p className="mb-8 max-w-2xl text-gray-400">
-            센터 규모·좌석 수·연동 범위에 따라 맞춤 견적을 제공합니다. 아래는 참고용 구성 예시입니다.
+            팀 규모와 임상 깊이에 맞는 요금제를 선택하세요. 언제든 업그레이드할 수 있습니다.
           </p>
           <div className="grid gap-4 md:grid-cols-3">
-            {[
-              { name: "스타터", price: "월 문의", note: "소규모 클리닉·파일럿" },
-              { name: "프로", price: "월 문의", note: "다중 지점·연동 확장" },
-              { name: "엔터프라이즈", price: "별도 협의", note: "보안·SSO·전담 지원" },
-            ].map((plan) => (
-              <article
-                key={plan.name}
-                className="rounded-xl border border-gray-700/50 bg-gray-800/40 p-6 backdrop-blur-sm"
-              >
-                <p className="text-sm font-medium text-gray-500">{plan.name}</p>
-                <p className="mt-2 text-2xl font-bold text-white">{plan.price}</p>
-                <p className="mt-3 text-sm text-gray-400">{plan.note}</p>
-              </article>
-            ))}
+            <article className="rounded-xl border border-gray-700/50 bg-gray-800/40 p-6 backdrop-blur-sm">
+              <p className="text-sm font-medium text-gray-500">Basic</p>
+              <p className="mt-2 text-2xl font-bold text-white">₩0 / 월</p>
+              <p className="mt-3 text-sm text-gray-400">
+                주니어 물리치료사
+                <br />
+                <br />• 월 환자 등록 30명 제한
+                <br />• 기본 SOAP 차트 작성
+                <br />• 기초 평가 툴 지원
+                <br />
+                <br />
+                무료로 시작하기
+              </p>
+            </article>
+            <article className="rounded-xl border border-gray-700/50 bg-gray-800/40 p-6 backdrop-blur-sm">
+              <p className="text-sm font-medium text-gray-500">
+                BEST
+                <br />
+                Pro
+              </p>
+              <p className="mt-2 text-2xl font-bold text-white">₩9,900 / 월</p>
+              <p className="mt-3 text-sm text-gray-400">
+                성장기 및 전문 물리치료사
+                <br />
+                <br />• 환자 등록 무제한
+                <br />• AI 임상 추론 SOAP 무제한
+                <br />• 맞춤형 PDF 다운로드
+                <br />• 프리미엄 ROM/MMT 정밀 분석
+                <br />
+                <br />
+                Pro 요금제로 업그레이드
+              </p>
+            </article>
+            <article className="rounded-xl border border-gray-700/50 bg-gray-800/40 p-6 backdrop-blur-sm">
+              <p className="text-sm font-medium text-gray-500">Enterprise</p>
+              <p className="mt-2 text-2xl font-bold text-white">₩99,000 / 월</p>
+              <p className="mt-3 text-sm text-gray-400">
+                재활 센터 및 병원 전문의
+                <br />
+                <br />• 센터 내 물리치료사 무제한 계정 생성
+                <br />• 마스터 대시보드 및 전체 환자 통계
+                <br />• 맞춤형 EMR 연동 지원
+                <br />
+                <br />
+                도입 문의하기
+              </p>
+            </article>
           </div>
         </section>
 
