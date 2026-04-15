@@ -28,7 +28,7 @@ export function HeroMaster({ kakaoConsultUrl }: HeroMasterProps) {
               href="#contact"
               className="rounded-lg bg-blue-600 px-7 py-3.5 font-semibold text-white shadow-lg shadow-blue-900/20 transition hover:bg-blue-700"
             >
-              무료 데모 신청
+              어플 이용신청
             </Link>
             <a
               href={kakaoConsultUrl}
